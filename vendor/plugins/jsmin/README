@@ -1,0 +1,12 @@
+== JSMin (plugin)
+
+This plugin was specifically created for this Radiant extension but is really
+just the jsmin.rb file packaged into a plugin.
+
+JSMin was written by Douglas Crawford, is publically available and infor may be
+found here: http://www.crockford.com/javascript/jsmin.html.
+
+The ruby port was written by Uladzislau Latynski and may be found at:
+http://www.crockford.com/javascript/jsmin.rb
+
+More details on the license may be found in /lib/jsmin.rb
