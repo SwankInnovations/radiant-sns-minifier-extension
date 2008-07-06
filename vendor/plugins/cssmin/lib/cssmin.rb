@@ -101,18 +101,6 @@ module CSSMin
     # Re-insert box model hacks.
     css.gsub!('___BMH___', '"\"}\""')
     
-#   # Replace 6.0 with 6, but only when preceded by : or a space.
-    css.gsub!(/(:|\s)(\d+)\.0+(?=[^\d])/, '\1\2')
-    
-#   # Replace : 2em 2em 2em 2em; with :2em;
-    css.gsub!(/(?!:)((?:\d+|\d+\.[1-9]+|\.[1-9]+)(?:%|em|ex|px|in|cm|mm|pt|pc))\s+\1\s+\1\s+\1(?=;|\})/, '\1')
-
-#   # Replace : 2em 3px 2em 3px; with :2em 3px;
-    css.gsub!(/(?!:)((?:\d+|\d+\.[1-9]+|\.[1-9]+)+(?:%|em|ex|px|in|cm|mm|pt|pc)\s+(?:\d+|\d+\.[1-9]+|\.[1-9]+)+(?:%|em|ex|px|in|cm|mm|pt|pc))\s+\1(?=;|\})/, '\1')
-
-#   # Remove any semicolons before braces ';}' => '}'
-    css.gsub!(/;(\})/, '\1')
-    
     css.strip
   end
   
