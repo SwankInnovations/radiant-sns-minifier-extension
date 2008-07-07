@@ -51,6 +51,12 @@ There, you can choose which minifiers you want to use and set any of their
 available options.
 
 
+== Requirements
+You'll need:
+  * Radiant v0.6.7 or higher
+  * Styles 'n Scripts Extension v0.5 or higher
+
+
 == Installation
 Install the extension in your Radiant project like:
   [your project]/vendor/extensions/sns_minifier
