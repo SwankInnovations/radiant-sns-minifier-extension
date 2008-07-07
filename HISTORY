@@ -5,4 +5,4 @@ v0.1.1  Quick Bugfix - Renamed the rake tasks file from "minify_extension_tasks"
 v0.1    Initial Release - Yay.  This came out quickly after Styles 'n Scripts
         version 0.5 and is pretty lean (read "no tests") but is also based on
         the work of others so should be pretty robust (or pretty flaky depending
-        on your outlook).  Release early, release often, right.
+        on your outlook).  Release early, release often, right?s
