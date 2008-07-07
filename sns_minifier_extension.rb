@@ -1,5 +1,5 @@
 class SnsMinifierExtension < Radiant::Extension
-  version "0.1"
+  version "0.1.1"
   extension_name "Styles 'n Scripts Minifier"
   description "Allows you to minify (compress) the output of your stylesheets and javascripts via the Styles 'n Scripts Extension."
   url ""
