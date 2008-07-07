@@ -1,6 +1,71 @@
-= Minify
+= Styles 'n Scripts Minifier
 
-Will add minification to javascript and css files.
+Adds the ability to minify CSS and JS files.  This way, you can keep your code
+the way you like it in the editor but serve up minified files.  (And if you
+really want to speed things up, add GZip to the mix to have your server crunch
+it further).
 
-(Doesn't do anything yet -- just storage for some plugins I've found and a
-concept).
+
+== Available Minifiers
+
+  * JSMin v1.0.0 - This is based on the original C code by Douglas Crockford
+    (http://www.crockford.com/javascript/jsmin.html) but wonderfully repackaged
+    into a plugin by Ryan Grove (http://github.com/rgrove/cssmin/tree/master).
+    
+    JSMin is often seen as being an older but safer technology.  It certainly
+    doesn't pack as well as some others out there but is tried and true.
+    
+  * CSSMin v1.0.0 - This is Ryan Grove's port of the YUI Compressor's
+    (http://www.julienlecomte.net/yuicompressor/) CSS minifier (which was itself
+    taken from Isaac Schlueter’s regular expression based CSS minifier
+    (http://foohack.com/2007/09/squish-it-good-code-compression-for-the-masses/)
+    
+    Ryan nicely ported this one to a plugin too.  And I added a minor addition
+    too (which is available via options -- see below)
+    
+  * Packr - James Coglan was nice enough to port Dean Edward's famous Packer
+    (http://dean.edwards.name/packer/).  More about the plugin version used here
+    can be found at: (http://blog.jcoglan.com/packr/)
+    
+    Packer is a great tool but it is pretty strict about terminating javascripts
+    with semicolons (http://dean.edwards.name/packer/usage/sample.html).
+    
+  * Rainpress - This is a newer ruby project by Uwe L. Korn to minify CSS files
+    (http://code.google.com/p/rainpress/).  There isn't much history but it
+    seems solid enough.
+    
+    I had to repackage this one into a plugin (and strip a lot of the command
+    line stuff out).  Originally I did all this as I didn't know about CSSMin.
+    Anyway, I included this too basically because I'd already done everything.
+
+
+== Usage
+It's pretty simple, really.  Once installed, it adds a "Minify?" checkbox to the
+bottom of your Stylesheet and Javascript pages.  Just check the box and save the
+file.  Viola, the content is minified.
+
+The configuration can be changed via the @@settings variable inside:
+  /lib/text_asset_mixins.rb
+
+There, you can choose which minifiers you want to use and set any of their
+available options.
+
+
+== Installation
+Install the extension in your Radiant project like:
+  [your project]/vendor/extensions/sns_minifier
+
+You will need the Styles 'n Scripts extension installed for this to work and you
+will also probably need to change your project's environment.rb file to twiddle
+the load order (the SnS Extension must be loaded before this one).  For example,
+you could use something like:
+  config.extensions = [ :all, :sns_minifier ] 
+
+  
+== To Do
+Well first of all this extension needs some specs.
+
+But after that I'd *love* to find where someone ported the YUI Compressor (JS 
+version) to ruby.  It appears to be much more flexible (read forgiving) than
+Packer while still crunching stuff way down.  A second option would be to let
+admins install the java version and make this plugin interact with that.

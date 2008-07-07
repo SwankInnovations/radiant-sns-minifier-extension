@@ -1,1 +1,1 @@
-#require File.dirname(__FILE__) + '/lib/jsmin'
+require File.dirname(__FILE__) + '/lib/jsmin'

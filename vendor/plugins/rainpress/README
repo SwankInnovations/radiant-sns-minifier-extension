@@ -1,6 +1,8 @@
-This is the core of the Rainpress Compressor (svn rev. 41) (minifier, really) 
+This is the core of the Rainpress Compressor (minifier, really) by Uwe L. Korn,
 loosely repackaged as a plugin.  The original code may be found here:
     http://code.google.com/p/rainpress/
+
+Currently, this is based on the v1.0 release (SVN version 54 - March 20, 2008)
 
 I've stripped out all the command-line stuff and just kept the core compressor.
 This has the added benefit of not requiring anything (the full version requires

@@ -1,21 +1,16 @@
-# Uncomment this if you reference any of your controllers in activate
-# require_dependency 'application'
-
-class MinifyExtension < Radiant::Extension
-  version "1.0"
-  description "Describe your extension here"
-  url "http://yourwebsite.com/minify"
-  
-  # define_routes do |map|
-  #   map.connect 'admin/minify/:action', :controller => 'admin/minify'
-  # end
+class SnsMinifierExtension < Radiant::Extension
+  version "0.1"
+  extension_name "Styles 'n Scripts Minifier"
+  description "Allows you to minify (compress) the output of your stylesheets and javascripts via the Styles 'n Scripts Extension."
+  url ""
   
   def activate
-    # admin.tabs.add "Minify", "/admin/minify", :after => "Layouts", :visibility => [:all]
+    raise "The SnS Minifier extension requires the Styles 'n Scripts extension be loaded first!" unless defined?(TextAsset)
+    admin.text_asset.edit.add :content_bottom, "minify", :after => 'edit_filter'
+    TextAsset.send :include, TextAssetMixins
   end
   
   def deactivate
-    # admin.tabs.remove "Minify"
   end
   
 end
