@@ -6,7 +6,7 @@ class SnsMinifierExtension < Radiant::Extension
   
   def activate
     raise "The SnS Minifier extension requires the Styles 'n Scripts extension be loaded first!" unless defined?(TextAsset)
-    admin.text_asset.edit.add :content_bottom, "minify", :after => 'edit_filter'
+    admin.text_assets.edit.add :content_bottom, "minify", :after => 'edit_filter'
     TextAsset.send :include, TextAssetMixins
   end
   
